@@ -104,14 +104,28 @@ node *takeInput()
 	return head;
 }
 
-void operator<<(ostream &os, node *head)
+// void operator<<(ostream &os, node *head)
+// {
+// 	display(head);
+// }
+
+ostream& operator<<(ostream &os, node *head)
 {
 	display(head);
+	return os;
+}
+
+istream& operator>>(istream &is, node *&head)
+{
+	head = takeInput();
+	return is;
 }
 
 int main()
 {
-	node *head = takeInput();
-	cout<<head;
+	node *head1;
+	node *head2;
+	cin>>head1>>head2;
+	cout<<head1<<head2;
 	return 0;
 }
