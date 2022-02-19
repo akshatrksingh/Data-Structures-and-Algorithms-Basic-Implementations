@@ -88,7 +88,9 @@ void insertAtKthPos(node *&head, int d, int k)
 		}
 		node *n = new node(d);
 		n->next = tmp->next;
+		n->prev = tmp;
 		tmp->next = n; 
+		n->next->prev = n;
 	}
 }
 
