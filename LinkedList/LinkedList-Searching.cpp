@@ -63,9 +63,9 @@ void insertAtEnd(node *&head, int d)
 	end->next = new node(d);
 }
 
-void insertAtKthNode(node *&head, int d, int k)
+void insertAtKthPos(node *&head, int d, int k)
 {
-	if(head == NULL || k == 0)
+	if(head == NULL || k <= 1)
 	{
 		insertAtBeg(head, d);
 	}
@@ -75,12 +75,12 @@ void insertAtKthNode(node *&head, int d, int k)
 	}
 	else
 	{
-		int jump = 1;
+		int jmp = 1;
 		node *tmp = head;
-		while(jump <= k-1)
+		while(jmp < k-1)
 		{
 			tmp = tmp->next;
-			jump++;
+			jmp++;
 		}
 		node *n = new node(d);
 		n->next = tmp->next;
@@ -110,20 +110,19 @@ int main()
 	display(head);
 	insertAtBeg(head, 231);
 	display(head);
-	insertAtKthNode(head, 5, 1);
+	insertAtKthPos(head, 5, 1);
 	display(head);
-	insertAtKthNode(head, 62, 2);
+	insertAtKthPos(head, 62, 2);
 	display(head);
-	insertAtKthNode(head, 5222, 3);
+	insertAtKthPos(head, 5222, 3);
 	display(head);
-	insertAtKthNode(head, 223, 4);
+	insertAtKthPos(head, 223, 2);
 	display(head);
 	insertAtEnd(head, 53);
 	display(head);
 	search(head, 34);
 	search(head, 231);
 	search(head, 62);
-	search(head, 453);
 	insertAtEnd(head, 453);
 	display(head);
 	search(head, 453);
