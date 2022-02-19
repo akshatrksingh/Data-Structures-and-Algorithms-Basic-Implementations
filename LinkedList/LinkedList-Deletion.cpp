@@ -91,10 +91,15 @@ void deleteAtEnd(node *&head)
 	delete tmp1;
 }
 
-void deleteAtKthNode(node *&head, int k)
+void deleteAtKthPos(node *&head, int k)
 {
 	if(head == NULL || k > length(head))
 	{
+		return;
+	}
+	else if(k == 1)
+	{
+		deleteAtBeg(head);
 		return;
 	}
 	node *tmp1 = head;   // kth
@@ -126,7 +131,9 @@ int main()
 	display(head);
 	deleteAtEnd(head);
 	display(head);
-	deleteAtKthNode(head, 4);
+	deleteAtKthPos(head, 4);
+	display(head);
+	deleteAtKthPos(head, 1);
 	display(head);
 	deleteAtBeg(head);
 	display(head);
