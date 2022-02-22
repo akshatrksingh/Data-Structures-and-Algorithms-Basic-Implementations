@@ -17,6 +17,13 @@ public:
 	{
 		map<T, bool> vis;
 		queue<T> q;
+		
+		for(auto a: l)
+        	{
+        	vis[a.first] = false;
+        	}
+        
+		
 		q.push(src);
 		vis[src] = true;
 
