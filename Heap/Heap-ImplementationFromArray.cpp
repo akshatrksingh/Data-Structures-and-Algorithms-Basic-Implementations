@@ -2,11 +2,10 @@
 #include <vector>
 using namespace std;
 
-
+bool maxHeap;
 class Heap
 {
 private:
-	bool maxHeap;
 	bool compare(int a, int b)
 	{
 	    if(maxHeap)
@@ -22,7 +21,7 @@ public:
 	void display(int arr[], int n)
 	{
     	cout << "Array representation of Heap is: ";
-	    for (int i = 0; i < n; ++i)
+	    for (int i = 0; i < n; i++)
 	    {
 	        cout << arr[i] << " ";
 	    }
@@ -33,11 +32,11 @@ public:
 	    int largest = root; 
 	    int left = 2 * root + 1; 
 	    int right = 2 * root + 2; 
-	    if (left < n && compare(arr[left], arr[largest])) 
+	    if (left < n && compare(arr[left], arr[largest]))
 	    {
 	        largest = left;
 	    }
-	    if (right < n && compare(arr[right], arr[largest])) 
+	    if (right < n && compare(arr[right], arr[largest]))
 	    {
 	        largest = right;
 	    }
@@ -59,9 +58,10 @@ public:
 
 int main()
 {
-    int arr[] = { 1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17 };
+    int arr[] = { 1, 3, 6, 13, 10, 9, 8, 4, 15, 5, 17 };
     int n = sizeof(arr) / sizeof(arr[0]);
     Heap h;
+    maxHeap = false;
     h.buildHeap(arr, n);
     h.display(arr, n);
     return 0;
