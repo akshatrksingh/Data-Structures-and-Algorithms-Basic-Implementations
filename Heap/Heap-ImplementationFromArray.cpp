@@ -59,10 +59,10 @@ public:
 
 int main()
 {
-	int arr[] = { 1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17 };
+    int arr[] = { 1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17 };
     int n = sizeof(arr) / sizeof(arr[0]);
     Heap h;
     h.buildHeap(arr, n);
     h.display(arr, n);
-	return 0;
+    return 0;
 }
