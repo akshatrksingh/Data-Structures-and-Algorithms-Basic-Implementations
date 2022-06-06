@@ -52,11 +52,11 @@ int partition(int arr[], int low, int high)
     do
     {
       i++;
-    } while(arr[i] <= pivot);
+    } while(arr[i] <= pivot);   // for non-increasing order: while(arr[i] >= pivot) 
     do
     {
       j--;
-    } while(arr[j] > pivot);
+    } while(arr[j] > pivot);    // for non-increasing order: while(arr[j] < pivot);
     if(i < j)
     {
       swap(arr[i], arr[j]);
