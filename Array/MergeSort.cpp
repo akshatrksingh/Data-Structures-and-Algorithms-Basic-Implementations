@@ -58,8 +58,7 @@ void merge(int arr[], int low, int high)
   i = low;
   while(p1 != end_left && p2 != end_right)
   {
-    if(*p1 <= *p2) arr[i++] = *p1++;
-    else arr[i++] = *p2++;
+    arr[i++] = (*p1 <= *p2)?  *p1++: *p2++;
   }
   while(p1 != end_left) 
   {
